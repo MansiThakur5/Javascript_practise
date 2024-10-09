@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height:300px;
+            width:600px;
+            background-color: lightpink;
+        }
+        .buton{
+             display:inline-block;
+            height:50px;
+            width: 60px;
+            margin:20px;
+            padding: 10px;
+           border:solid black 3px;
+           color:white;
+        }
+        #grey{
+            background-color:grey;
+        }
+        #white{
+            background-color:white;
+        }
+        #blue{
+            background-color:blue;
+        }
+        #yellow{
+            background-color:yellow;
+        }
+        #purple{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body class="main">
+    <h1>Color Scheme Switcher</h1>
+    <span class="buton" id="grey"></span>
+    <span class="buton" id="white"></span>
+    <span class="buton" id="blue"></span>
+    <span class="buton" id="yellow"></span>
+    <span class="buton" id="purple"></span>
+</body>
+<script>
+    const allBtn=document.querySelectorAll('.buton')
+    // console.log(allBtn);
+    const body=document.querySelector("body")
+    // console.log(body)
+    allBtn.forEach(function (buton){
+        console.log(buton)
+        buton.addEventListener('click',function(anyName){
+
+            console.log(anyName);
+            console.log(anyName.target);
+            if(anyName.target.id==='grey'){
+                anyName.target.innerHTML="Hello Grey"
+                document.querySelector('span').style.backgroundColor='black'
+               body.style.backgroundColor='grey' 
+            }
+            if(anyName.target.id==='white'){
+                anyName.target.innerHTML="Hello White"
+                document.querySelector('#white').style.backgroundColor='black'
+                body.style.backgroundColor='white'
+            }
+            if(anyName.target.id==='blue'){
+                anyName.target.innerHTML="Hello Blue"
+                document.querySelector('#blue').style.backgroundColor='black'
+                body.style.backgroundColor='blue'
+            }
+            if(anyName.target.id==='yellow'){
+                anyName.target.innerHTML="Hello Yellow"
+                document.querySelector('#yellow').style.backgroundColor='black'
+                body.style.backgroundColor='yellow'
+            }
+            if(anyName.target.id==='purple'){
+                anyName.target.innerHTML="Hello Purple"
+                document.querySelector('#purple').style.backgroundColor='black'
+                body.style.backgroundColor='purple'
+            }
+        })
+    })
+    
+</script>
+</html>

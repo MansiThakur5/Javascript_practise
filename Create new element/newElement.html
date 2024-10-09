@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Element</title>
+</head>
+<body style="background-color: black; color:#fff ">
+</body>
+<script>
+    const createH1=document.createElement('h1')
+    console.log(createH1)
+    createH1.className="h1Class"
+    createH1.id="h1Id"
+    createH1.style.background='red'
+    // createH1.innerText="Hello"
+    createH1.setAttribute("title","newAttribute")
+    //text Created
+    const textCreated=document.createTextNode("hello text created")
+    createH1.appendChild(textCreated)
+
+    //to attach in document
+    document.body.appendChild(createH1)
+
+
+    const createDiv=document.createElement('div')
+    createDiv.className="div1"
+    createDiv.style.backgroundColor='blue'
+    createDiv.style.color='white'
+    createDiv.style.padding="40px"
+    createDiv.style.margin="40px"
+    const addText=document.createTextNode("New Div Created")
+    createDiv.appendChild(addText)
+    document.body.appendChild(createDiv)
+
+
+</script>
+</html>

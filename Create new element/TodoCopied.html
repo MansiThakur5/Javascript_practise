@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO_DO-LIST</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-gray-900 flex justify-center items-center min-h-screen w-full">
+    <div class="main relative sm:min-h-96 sm:min-w-72 sm:max-w-screen-sm md:max-w-[95%] md:min-w-[65%] md:min-h-42 rounded-md bg-blue-900">
+        <div class="flex justify-center items-center gap-2 mt-4">
+           <!-- <img class="h-16" src="icon.png" alt="image"> -->
+            <h1 class="text-3xl text-gray-400 px-2 font-bold">To-Do-List</h1>
+        </div>
+        <form class="flex justify-center gap-8 p-6">
+            <input class="inp py-2 px-4 w-[70%] focus:outline-none outline-none focus:ring-2 focus:ring-blue-500 rounded-md" type="text" placeholder="Write Your Task">
+            <button class="btn px-4 py-1 bg-blue-500 rounded-md font-semibold text-teal-100">Add</button>
+        </form>
+        <ul class="flex flex-col justify-center items-center md:text-lg sm:text-sm w-full px-4">
+        </ul>
+        <div class="flex float-end px-4 py-2">
+          
+        <span class=" text-gray-400 font-medium">Complete These Tasks</span>
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector(".inp");
+        const button = document.querySelector(".btn");
+        const items = document.querySelector("ul");
+
+        let taskArray = JSON.parse(localStorage.getItem('task')) || [];
+
+        function renderTask(task, index) {
+            let li = document.createElement('li');
+            li.classList.add("flex", "gap-4", "justify-between", "items-center", "w-full", "px-4", "py-1", "font-semibold", "text-gray-200", "mb-2", "break-words");
+            
+            let checkbox = document.createElement('input');
+            checkbox.type = "checkbox";
+            checkbox.classList.add("mr-2", "form-checkbox", "h-4", "w-4", "text-blue-600", "rounded-full", "focus:outline-none", "outline-none", "border-none", "focus:ring-2", "focus:ring-blue-500", "type", "flex-shrink-0");
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    li.classList.add("line-through", "text-gray-500");
+                } else {
+                    li.classList.remove("line-through", "text-gray-500");
+                }
+            });
+            
+            let taskContent = document.createElement('span');
+            taskContent.textContent = task;
+            taskContent.classList.add("flex-grow", "break-words", "overflow-hidden");
+            
+            let removeButton = document.createElement('button');
+            removeButton.innerHTML = `<i class="fas fa-times text-gray-300"></i>`;
+            removeButton.classList.add("bg-red-600", "px-2", "rounded-full", "flex-shrink-0");
+            removeButton.addEventListener('click', () => {
+                removeTask(index);
+            });
+            
+            li.appendChild(checkbox);
+            li.appendChild(taskContent);
+            li.appendChild(removeButton);
+            items.appendChild(li);
+        }
+
+        taskArray.forEach((task, index) => {
+            renderTask(task, index);
+        });
+
+        button.addEventListener("click", (e) => {
+            let value = input.value
+            
+            if (value) {
+                taskArray.push(value);
+                renderTask(value, taskArray.length - 1);
+                localStorage.setItem('task', JSON.stringify(taskArray));
+                input.value = "";
+            }else{
+                alert("Add any task in input feild !")
+            }
+        });
+
+        function removeTask(index) {
+            taskArray.splice(index, 1);
+            localStorage.setItem('task', JSON.stringify(taskArray));
+            items.innerHTML = '';
+            taskArray.forEach((task, idx) => renderTask(task, idx));
+        }
+    </script>
+</body>
+</html>

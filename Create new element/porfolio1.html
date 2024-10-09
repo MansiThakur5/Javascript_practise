@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #5d3fd3;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #5d3fd3;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 50px;
+            background-color: #fff;
+            background-image: url('background-image.png'); /* Add background image as per design */
+            background-size: cover;
+        }
+
+        .intro h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .intro h2 span {
+            color: #5d3fd3;
+        }
+
+        .intro p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .wave {
+            animation: wave-animation 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes wave-animation {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .primary {
+            background-color: #5d3fd3;
+            color: #fff;
+        }
+
+        .secondary {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        footer .social-links a:hover {
+            color: #5d3fd3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>&lt;Mansi Thakur&gt;</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="intro">
+            <h2>Hi all, I'm <span>Mansi Thakur</span> <span class="wave">👋</span></h2>
+            <p>A passionate Full Stack Developer 🚀 skilled in JavaScript / React / Node.js and other cool frameworks.</p>
+            <div class="buttons">
+                <a href="#contact" class="btn primary">Contact Me</a>
+                <a href="resume.pdf" class="btn secondary">See My Resume</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5-w8AR_l5JhIizOB4KfRUBROFK7xp2wlaYLiNV8ABDcLve206Ahh29IhWk9QjKmwaHs&usqp=CAU" alt="Developer at desk">
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

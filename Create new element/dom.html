@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Newsletter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .subscribe-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .subscribe-container h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .subscribe-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .subscribe-container button {
+            background-color: #192a87;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .subscribe-container button:hover {
+            background-color: #290dcb;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: rgb(5, 155, 42);
+        }
+
+        .error {
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="subscribe-container">
+        <h2>Be an expert app</h2>
+        <p>Get our guides delivered straight to your inbox.Subscribe today and never miss another post.</p>
+        <input type="email" id="emailInput" placeholder="Your email">
+        <button id="subscribeBtn">Subscribe</button>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+        const subscribeBtn=document.getElementById('subscribeBtn');
+        const emailInput=document.getElementById('emailInput');
+        const messageDiv=document.getElementById('message');
+        
+        subscribeBtn.addEventListener('click',function(){
+            const email=emailInput.value;
+            if (email===''){
+                messageDiv.textContent = 'Please enter your email address.';
+                messageDiv.classList.add('error');
+                return;
+            }
+            if (!validateEmail(email)){
+                messageDiv.textContent = 'Please enter a valid email address.';
+                messageDiv.classList.add('error');
+                return;
+            }
+            messageDiv.textContent='Thank you for subscribing!';
+            messageDiv.classList.remove('error');
+            setTimeout(()=>{
+                window.location.href='https://www.linkedin.com/in/mansi-thakur-673779289/';
+            }, 1000);
+        });
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+
+</body>
+</html>

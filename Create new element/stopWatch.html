@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container{
+            text-align: center;
+        }
+        .timer{
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        button{
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .start{
+            background-color: green;
+            color: white;
+        }
+        .stop{
+            background-color: red;
+            color: white;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <label class="timer">00:00:00</label>
+    <br>
+    <button class="start">Start</button>
+    <button class="lap" disabled>Lap</button>
+    <ul id="laps"></ul>
+</div>
+
+<script>
+    let timer;
+    let elapsedTime=0;
+    let isRunning=false;
+    const timerLabel=document.querySelector('.timer');
+    const startButton=document.querySelector('.start');
+    const lapButton=document.querySelector('.lap');
+    const laps=document.getElementById('laps');
+    function formatTime(time){
+        let milliseconds=Math.floor((time%1000)/10);
+        let seconds=Math.floor((time/1000)%60);
+        let minutes=Math.floor((time/(1000*60))%60);
+        let hours=Math.floor((time/(1000*60*60))%24);
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(2, '0')}`;
+    }
+
+    function updateTime(){
+        timerLabel.textContent=formatTime(elapsedTime);
+    }
+    function startStopwatch(){
+        const startTime=Date.now()-elapsedTime;
+        timer=setInterval(()=>{
+            elapsedTime=Date.now()-startTime;
+            updateTime();
+        },10);
+    }
+    function stopStopwatch(){
+        clearInterval(timer);
+    }
+    startButton.addEventListener('click',function () {
+        if(!isRunning) {
+            startStopwatch();
+            startButton.textContent = 'Stop';
+            startButton.classList.remove('start');
+            startButton.classList.add('stop');
+            lapButton.textContent = 'Lap';
+            lapButton.disabled = false;
+            isRunning = true;
+        }else{
+            stopStopwatch();
+            startButton.textContent='Start';
+            startButton.classList.remove('stop');
+            startButton.classList.add('start');
+            lapButton.textContent='Reset';
+            isRunning=false;
+        }
+    });
+    lapButton.addEventListener('click', function () {
+        if (isRunning){
+            const lapTime=document.createElement('li');
+            lapTime.textContent=formatTime(elapsedTime);
+            laps.prepend(lapTime);
+        } 
+        else{
+            elapsedTime=0;
+            updateTime();
+            laps.innerHTML='';
+            lapButton.textContent='Lap';
+            lapButton.disabled=true;
+        }
+    });
+</script>
+</body>
+</html>

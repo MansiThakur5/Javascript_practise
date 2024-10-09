@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            background-color: black;
+            color:white;
+        }
+        #images{
+            display:flex;
+        }
+        .img{
+            height:490px;
+            width: 300px;
+            margin: 60px;
+        }
+        #img2{
+        }
+    </style>
+</head>
+<body class="body">
+    <h1>Img to Img</h1>
+    <ul id="images">
+        <li><img class="img" id="img1" src="https://images.pexels.com/photos/9413771/pexels-photo-9413771.jpeg?auto=compress&cs=tinysrgb&w=400" alt="small-plant"><button id="btn1">Click me</button></li>
+        <li><img class="img" id="img2" src="https://images.pexels.com/photos/7534213/pexels-photo-7534213.jpeg?auto=compress&cs=tinysrgb&w=400" alt="plane-wall"><button id="btn2">Click me</button></li>
+        <li><img class="img" id="img3" src="https://images.pexels.com/photos/9899870/pexels-photo-9899870.jpeg?auto=compress&cs=tinysrgb&w=400" alt="close-book"><button id="btn3"> Click me</button></li>
+        <li><img class="img" id="img4" src="https://images.pexels.com/photos/7966633/pexels-photo-7966633.jpeg?auto=compress&cs=tinysrgb&w=400" alt="plain-page-drawing"><button id="btn4">Click me</button></li>
+        <li><img class="img" id="img5" src="https://images.pexels.com/photos/16491507/pexels-photo-16491507/free-photo-of-empty-cup-on-a-wooden-table.png?auto=compress&cs=tinysrgb&w=400" alt="empty-cup"><button id="btn5">Click me</button></li>
+        </ul>
+</body>
+<script>
+    // const body=document.querySelector("body")
+    // const images=document.querySelector('.img')
+    // console.log(body)
+    // console.log(images)
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //         if(e.target.id==='spring'){
+    //             document.body.style.backgroundImage=="url('https://images.pexels.com/photos/5746154/pexels-photo-5746154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";
+    //     }
+    // })
+    // Function to change the image source
+// function changeImage(imgId, newSrc) {
+//     document.getElementById(imgId).src = newSrc;
+// }
+
+// document.getElementById('btn1').addEventListener('click', function() {
+//     changeImage('img2', 'https://images.pexels.com/photos/53435/tree-oak-landscape-view-53435.jpeg?auto=compress&cs=tinysrgb&w=400');
+// });
+// // Add event listeners for each button
+// document.getElementById('btn2').addEventListener('click', function() {
+//     changeImage('img2', 'https://images.pexels.com/photos/25677026/pexels-photo-25677026/free-photo-of-plants-on-white-wall.jpeg?auto=compress&cs=tinysrgb&w=400');
+// });
+
+// document.getElementById('btn3').addEventListener('click', function() {
+//     changeImage('img3', 'https://images.pexels.com/photos/7809929/pexels-photo-7809929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+// });
+
+// document.getElementById('btn4').addEventListener('click', function() {
+//     changeImage('img4', 'https://images.pexels.com/photos/23961438/pexels-photo-23961438/free-photo-of-painting-of-lighthouse.jpeg?auto=compress&cs=tinysrgb&w=400');
+// });
+
+// document.getElementById('btn5').addEventListener('click', function() {
+//     changeImage('img5', 'https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg?auto=compress&cs=tinysrgb&w=400');
+// });
+
+
+// Array of image URLs for each image
+const imageSets = {
+    img1: [
+        'https://images.pexels.com/photos/1973270/pexels-photo-1973270.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/26599145/pexels-photo-26599145/free-photo-of-portrait-of-bald-baby.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/1374509/pexels-photo-1374509.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/769730/pexels-photo-769730.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/1232459/pexels-photo-1232459.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/2923156/pexels-photo-2923156.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/27659184/pexels-photo-27659184/free-photo-of-a-father-with-his-child.jpeg?auto=compress&cs=tinysrgb&w=400',
+        'https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?auto=compress&cs=tinysrgb&w=400'
+],
+        img2: [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+    ],
+    img3: [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+    ],
+    img4: [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+        ],
+    img5: [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+    ]
+};
+
+// Track the current index of the image for each image element
+let imageIndex = {
+    img1:0,
+    img2: 0,
+    img3: 0,
+    img4: 0,
+    img5: 0
+};
+
+// Function to change the image based on the current index and increment the index
+function changeImage(imgId) {
+    let imgElement = document.getElementById(imgId);
+    let images = imageSets[imgId];
+
+    // Increment index and reset if it exceeds the image array length
+    imageIndex[imgId] = (imageIndex[imgId] + 1) % images.length;
+
+    // Set the new image source
+    imgElement.src = images[imageIndex[imgId]];
+}
+document.getElementById('btn1').addEventListener('click', function() {
+    changeImage('img1');
+});
+// Add event listeners for each button
+document.getElementById('btn2').addEventListener('click', function() {
+    changeImage('img2');
+});
+
+document.getElementById('btn3').addEventListener('click', function() {
+    changeImage('img3');
+});
+
+document.getElementById('btn4').addEventListener('click', function() {
+    changeImage('img4');
+});
+
+document.getElementById('btn5').addEventListener('click', function() {
+    changeImage('img5');
+});

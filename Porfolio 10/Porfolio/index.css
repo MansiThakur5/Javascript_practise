@@ -1,0 +1,314 @@
+  /* Global Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Header */
+header {
+    background-color: #4b79a1;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+/* Navigation */
+nav {
+    background-color: #354b5e;
+    overflow: hidden;
+    color: black;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+    margin: 0;
+}
+nav a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    font-weight: bold;
+}
+nav a:hover {
+    background-color: #4b79a1;
+}
+/* Sections */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* About Section */
+.about {
+    background-color: #f5f5f5; /* Light background for contrast */
+    padding: 3rem;
+    border-radius: 12px; /* Rounded corners */
+    max-width: 800px;
+    margin: 0 auto; /* Center the section horizontally */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text alignment for the entire section */
+}
+
+.about img {
+    width: 150px; /* Set width as per your preference */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular image */
+    margin: 1.5rem 0; /* Space above and below the image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for the image */
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 1.5rem;
+    font-family: 'Arial', sans-serif; /* Clean font */
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-family: 'Verdana', sans-serif;
+    color: #333;
+}
+
+
+.about {
+    animation: fadeIn 2s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Section */
+.skills {
+    background-color: #f0f4f8; /* Light background for contrast */
+    padding: 3rem;
+    border-radius: 12px; /* Rounded corners */
+    max-width: 900px; /* Set a max-width */
+    margin: 2rem auto; /* Center the section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3em;
+    color: #00796b; /* Dark teal color */
+    text-transform: uppercase; /* All caps for emphasis */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Space between the columns */
+}
+
+.skills-column {
+    flex: 1;
+    background-color: #ffffff; /* White background for columns */
+    border-radius: 8px; /* Rounded corners */
+    padding: 2rem; /* Padding inside columns */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for columns */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.skills-column:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.skills-column h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 1rem; /* Space below the heading */
+    color: #005b5c; /* Darker teal color for the heading */
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0; /* Remove default padding */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-list li {
+    background-color: #e0e0e0; /* Light gray background for list items */
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s; /* Animation for hover effect */
+}
+
+.skills-list li:hover {
+    background-color: #d1d1d1; /* Darker gray on hover */
+}
+
+
+/* Projects Section */
+.projects {
+    background-color: #f0f4f8;
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #00796b;
+    text-transform: uppercase;
+}
+
+.project-item {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #005b5c;
+}
+
+.project-item a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.project-item a:hover {
+    color: #004d4f;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+/* Resume Section */
+.resume {
+    background-color: #f0f4f8;
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.resume h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #00796b;
+    text-transform: uppercase;
+}
+
+.resume-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume a {
+    background-color: #4b79a1;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.resume a:hover {
+    background-color: #3a6075;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f0f4f8;
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #00796b;
+    text-transform: uppercase;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    line-height: 2;
+}
+
+.contact-info a {
+    color: #4b79a1;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #3a6075;
+}
+
+
+/* Footer */
+footer {
+    background-color: #354b5e;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}

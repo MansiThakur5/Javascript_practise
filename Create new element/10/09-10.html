@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed {
+        text-decoration:line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-input">
+            <input type="text" id="taskInput">
+            <button id="addTaskBtn">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        document.getElementById('addTaskBtn').addEventListener('click', function(){
+            const taskInput=document.getElementById('taskInput');
+            const taskText=taskInput.value.trim();
+            if(taskText){
+                addTask(taskText);
+                taskInput.value='';
+            }
+        });
+        function addTask(task){
+            const taskList=document.getElementById('taskList');
+            const listItem=document.createElement('li');
+            listItem.innerHTML=`<input type="checkbox" onchange="toggleTask(this)"><span>${task}</span>
+            <button onclick="deleteTask(this)">Delete</button>`;
+            taskList.appendChild(listItem);
+        }
+        function toggleTask(checkbox){
+            checkbox.nextElementSibling.classList.toggle('completed');
+        }
+        function deleteTask(button){
+            button.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

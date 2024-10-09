@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove elements</title>
+</head>
+<!-- <body style="color:#fff; background-color:#020202;">
+    <ul class="language">
+        <li>JavaScript</li>
+        <li>HTML</li> -->
+    <!-- </ul> -->
+</body>
+<script>
+
+    //to add Lists using function 
+    // function addLanguage(langName){
+    //     const li1=document.createElement('li')
+    //     li1.innerHTML=`${langName}`
+    //     document.querySelector('.language').appendChild(li1)
+    // }
+    // addLanguage("python")
+    // addLanguage("C++")
+
+
+
+    //FOR practice
+    // function addLists(listName){
+    //     const li1=document.createElement('li')
+    //     li1.innerHTML=`${listName}`
+    //     document.querySelector('.language').appendChild(li1)
+    // }
+    // addLists("python")
+
+
+    //  function addLi(listsName){
+    //     const lists1=document.createElement('li')
+    //     lists1.style.color='#fff'
+    //     lists1.style.backgroundColor='red'
+    //     lists1.appendChild(document.createTextNode(listsName))
+    //     document.querySelector('.language').appendChild(lists1)
+    //  }
+    //  addLi("Python")
+
+
+    // //to edit the value
+    // const select=document.querySelector("li:nth-child(2)")
+    // select.innerHTML="HELLO NEW lISTS"
+
+
+    console.log("Mansi")
+const buttons = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+
+buttons.forEach(function (button) {
+  console.log(button);
+  button.addEventListener('click', function (e) {
+    console.log(e);
+    console.log(e.target);
+    if (e.target.id === 'grey') {
+      body.style.backgroundColor = e.target.id;
+    }
+    if (e.target.id === 'white') {
+      body.style.backgroundColor = e.target.id;
+    }
+    if (e.target.id === 'blue') {
+      body.style.backgroundColor = e.target.id;
+    }
+    if (e.target.id === 'yellow') {
+      body.style.backgroundColor = e.target.id;
+    }
+    
+  });
+});
+    </script>
+</html>

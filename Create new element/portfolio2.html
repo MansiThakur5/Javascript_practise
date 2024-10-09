@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mansi Thakur - Personal Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Header */
+        header {
+            background-color: #4b79a1;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        /* Navigation */
+        nav {
+            background-color: #354b5e;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav li {
+            display: inline-block;
+            margin: 0;
+        }
+        nav a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #4b79a1;
+        }
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        /* About Section */
+        .about {
+            text-align: center;
+        }
+        .about img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .about h2 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        .about p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        /* Skills Section */
+        .skills h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .skills-list li {
+            list-style-type: none;
+            background-color: #e0e0e0;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        /* Projects Section */
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+        .project-item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .project-item h3 {
+            margin-top: 0;
+        }
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        /* Resume Section */
+        .resume {
+            text-align: center;
+        }
+        .resume a {
+            background-color: #4b79a1;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .resume a:hover {
+            background-color: #3a6075;
+        }
+        /* Contact Section */
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+        .contact-info {
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 2;
+        }
+        /* Footer */
+        footer {
+            background-color: #354b5e;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="home">
+        <h1>Mansi Thakur</h1>
+        <p>B.E. Computer Science Engineering Student</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <img src="your-image.jpg" alt="Mansi Thakur">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Mansi Thakur, a passionate Computer Science Engineering student specializing in web development and programming. I enjoy creating efficient and innovative solutions to complex problems. I'm always eager to learn new technologies and improve my skills.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <ul class="skills-list">
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>C++ Programming</li>
+            <li>SQL</li>
+            <li>Front-End Development</li>
+            <li>Problem Solving</li>
+            <li>Public Speaking (Toastmasters)</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <!-- Project 1 -->
+        <div class="project-item">
+            <h3>Web Development Internship at CodSoft</h3>
+            <img src="project1-image.jpg" alt="Project 1">
+            <p>
+                Developed a landing page and a to-do app during my internship at CodSoft, focusing on responsive design and user experience.
+            </p>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-item">
+            <h3>Library Book Collection Page</h3>
+            <img src="project2-image.jpg" alt="Project 2">
+            <p>
+                Created a dynamic web page with a cart feature for a library, utilizing JavaScript for interactive functionalities.
+            </p>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <h2>Resume</h2>
+        <a href="https://in.docworkspace.com/d/sILTImdveAdzel7gG" target="_blank">Download My Resume</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p>Email: mansithakur18072005@gmail.com</p>
+            <p>Phone: +91 9805896584</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/mansi-thakur-673779289/" target="_blank">linkedin.com/in/mansi-thakur</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Mansi Thakur. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
